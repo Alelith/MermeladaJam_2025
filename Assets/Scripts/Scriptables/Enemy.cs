@@ -2,18 +2,9 @@ using UnityEngine;
 
 namespace Scriptables
 {
-    public class Enemy : MonoBehaviour
+    [CreateAssetMenu(fileName = "Enemy", menuName = "Scriptables/Enemy", order = 1)]
+    public class Enemy : ScriptableObject
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
         
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

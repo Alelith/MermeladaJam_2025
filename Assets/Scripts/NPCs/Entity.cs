@@ -5,6 +5,9 @@ namespace NPCs
 {
     public abstract class Entity : MonoBehaviour
     {
+        [SerializeField]
+        
+
         protected Transform objetive;
         
         protected StateMachine brain;
