@@ -5,7 +5,7 @@ namespace NPCs
 {
     public abstract class Entity : MonoBehaviour
     {
-        protected GameObject objetive;
+        protected Transform objetive;
         
         protected StateMachine brain;
         

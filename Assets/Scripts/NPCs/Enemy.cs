@@ -7,7 +7,7 @@ namespace NPCs
     {
         protected override void Start()
         {
-            objetive = GameManager.Instance.CityCenter;
+            objetive = Town.Instance.TownCenter;
             
             base.Start();
         }
