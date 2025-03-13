@@ -13,19 +13,19 @@ namespace Managers
         [SerializeField]
         Transform player;
 
-        Vector3[] initialPositions;
+        float[] initialPositions;
 
         void Start()
         {
-            initialPositions = new Vector3[parallaxLayers.Length];
+            initialPositions = new float[parallaxLayers.Length];
             for (int i = 0; i < parallaxLayers.Length; i++)
-                initialPositions[i] = parallaxLayers[i].transform.position;
+                initialPositions[i] = parallaxLayers[i].transform.position.x;
         }
 
         void Update()
         {
             for (int i = 0; i < parallaxLayers.Length; i++)
-                parallaxLayers[i].transform.position = initialPositions[i] + (player.position - player.position * parallaxFactors[i]);
+                parallaxLayers[i].transform.position = new(initialPositions[i] + (player.position.x - player.position.x * parallaxFactors[i]), parallaxLayers[i].transform.position.y);
         }
     }
 }

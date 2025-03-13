@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Managers
@@ -9,6 +10,9 @@ namespace Managers
         [SerializeField] 
         Transform townCenter;
         
+        [SerializeField]
+        Building[] buildings;
+        
         public int Gold { get; set; } = 1000;
         
         public Transform TownCenter => townCenter;
@@ -19,6 +23,11 @@ namespace Managers
                 Instance = this;
             else
                 Destroy(gameObject);
+        }
+
+        void Start()
+        {
+            buildings = FindObjectsOfType<Building>();
         }
     }
 }

@@ -6,38 +6,38 @@ namespace Managers
     public class Building : MonoBehaviour
     {
         [SerializeField]
-        float health = 100;
+        protected float health = 100;
         
         [SerializeField]
-        int repairPrice = 100;
+        protected int repairPrice = 100;
         
         [SerializeField]
-        Sprite fixedBuilding;
+        protected Sprite fixedBuilding;
         [SerializeField]
-        Sprite brokenBuilding;
+        protected Sprite brokenBuilding;
         
-        bool isBroken = false;
+        protected bool isBroken = false;
         
-        SpriteRenderer spriteRenderer;
-        Collider2D collider2D;
+        protected SpriteRenderer spriteRenderer;
+        protected Collider2D collider2D;
         
         public bool IsBroken => isBroken;
 
-        void Awake()
+        protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             
             collider2D = GetComponent<Collider2D>();
         }
 
-        public void Broke()
+        public virtual void Broke()
         {
             isBroken = true;
             collider2D.isTrigger = true;
             spriteRenderer.sprite = brokenBuilding;
         }
         
-        public void Repair()
+        public virtual void Repair()
         {
             if (isBroken)
             {
