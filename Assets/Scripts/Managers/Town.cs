@@ -9,6 +9,8 @@ namespace Managers
         [SerializeField] 
         Transform townCenter;
         
+        public int Gold { get; set; } = 1000;
+        
         public Transform TownCenter => townCenter;
     
         void Awake()

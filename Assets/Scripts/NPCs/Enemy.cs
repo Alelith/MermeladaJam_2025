@@ -1,6 +1,6 @@
-using System;
 using Managers;
 using UnityEngine;
+
 
 namespace NPCs
 {
@@ -11,6 +11,13 @@ namespace NPCs
         
         [SerializeField]
         float attackCooldown;
+
+        [SerializeField] 
+        float attackDamage;
+        
+        [SerializeField]
+        [Range(0, 1)]
+        float speed;
 
         bool isAttacking;
 
@@ -25,12 +32,16 @@ namespace NPCs
             base.Start();
         }
 
-        void OnTriggerEnter(Collider other)
+        void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Building"))
             {
-                isAttacking = true;
-                building = other.GetComponent<Building>();
+                var building = other.GetComponent<Building>();
+                if (!building.IsBroken)
+                {
+                    isAttacking = true;
+                    this.building = building;
+                }
             }
         }
 
@@ -39,14 +50,9 @@ namespace NPCs
         protected override void Idle()
         {
             if (isAttacking)
-            {
-                brain.PopState();
                 brain.PushState(Attack, OnAttackEnter, OnAttackExit);
-            }
             else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, objetive.position, 1 * Time.deltaTime);
-            }
+                transform.position = Vector3.MoveTowards(transform.position, objetive.position, speed * Time.deltaTime);
         }
 
         protected override void OnIdleExit() { }
@@ -65,12 +71,12 @@ namespace NPCs
             if (attackTimer <= 0)
             {
                 attackTimer = attackCooldown;
-                building.Health -= 10;
+                building.Health -= attackDamage;
 
                 if (building.Health <= 0)
                 {
                     isAttacking = false;
-                    Destroy(building.gameObject);
+                    building.Broke();
                     building = null;
                     brain.PopState();
                 }

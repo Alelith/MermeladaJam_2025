@@ -1,3 +1,5 @@
+using System;
+using Managers;
 using UnityEngine;
 
 namespace Player
@@ -7,6 +9,9 @@ namespace Player
         [SerializeField]
         [Range(0, 50)]
         float speed = 10;
+        
+        [SerializeField]
+        GameObject[] buildings;
         
         InputActions actions;
         Rigidbody2D rb;
@@ -27,6 +32,17 @@ namespace Player
         }
 
         void FixedUpdate() => rb.linearVelocity = movement * speed;
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Building"))
+            {
+                var building = other.GetComponent<Building>();
+                
+                if (building.IsBroken)
+                    building.Repair();
+            }
+        }
 
         void OnDisable() => actions.Disable();
 
