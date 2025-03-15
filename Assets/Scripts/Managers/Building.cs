@@ -39,20 +39,15 @@ namespace Managers
         
         public virtual void Repair()
         {
-            if (isBroken)
-            {
-                if (Town.Instance.Gold >= repairPrice)
-                {
-                    Town.Instance.Gold -= repairPrice;
-                    isBroken = false;
-                    health = 100;
-                    collider2D.isTrigger = false;
-            
-                    spriteRenderer.sprite = fixedBuilding;
-                }
-            }
+            isBroken = false;
+            health = 100;
+            collider2D.isTrigger = false;
+    
+            spriteRenderer.sprite = fixedBuilding;
         }
 
         public float Health { get => health; set => health = value; }
+
+        public int RepairPrice => repairPrice;
     }
 }

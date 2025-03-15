@@ -10,18 +10,8 @@ namespace NPCs
         protected float health;
         
         [SerializeField]
-        float attackCooldown;
-
-        [SerializeField] 
-        float attackDamage;
-        
-        [SerializeField]
         [Range(0, 1)]
         float speed;
-
-        bool isAttacking;
-
-        float attackTimer;
 
         Building building;
         

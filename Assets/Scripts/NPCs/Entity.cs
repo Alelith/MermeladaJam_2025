@@ -6,11 +6,18 @@ namespace NPCs
     public abstract class Entity : MonoBehaviour
     {
         [SerializeField]
-        
+        protected float attackCooldown;
+
+        [SerializeField] 
+        protected float attackDamage;
 
         protected Transform objetive;
         
         protected StateMachine brain;
+
+        protected bool isAttacking;
+
+        protected float attackTimer;
         
         protected virtual void Start() 
         {

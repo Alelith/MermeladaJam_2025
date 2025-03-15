@@ -1,4 +1,5 @@
 using System;
+using NPCs;
 using UnityEngine;
 
 namespace Managers
