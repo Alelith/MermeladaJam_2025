@@ -105,6 +105,9 @@ namespace Player
                     Town.Instance.Gold -= buildingCreator.MoneyCost;
                     buildingCreator.CreateBuilding();
                     
+                    if (buildingCreator.BuildingPrefab.name == "Tower")
+                        Town.Instance.AvailableAllies += 2;
+                    
                     canvas.DOFade(0, 0.5f);
                     
                     canvas.interactable = false;

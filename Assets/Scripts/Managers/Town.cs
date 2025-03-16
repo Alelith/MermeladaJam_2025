@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using NPCs;
 using UnityEngine;
 
@@ -12,7 +14,10 @@ namespace Managers
         Transform townCenter;
         
         [SerializeField]
-        Building[] buildings;
+        List<Building> buildings;
+        
+        [SerializeField]
+        CanvasGroup gameOverScreen;
 
         int availableAllies;
         
@@ -23,6 +28,8 @@ namespace Managers
         public int AvailableAllies { get => availableAllies; set => availableAllies = value; }
         public int FilledAllies { get => filledAllies; set => filledAllies = value; }
 
+        public List<Building> Buildings => buildings;
+        
         public Transform TownCenter => townCenter;
     
         void Awake()
@@ -35,7 +42,7 @@ namespace Managers
 
         void Start()
         {
-            buildings = FindObjectsOfType<Building>();
+            buildings = new(FindObjectsOfType<Building>());
 
             foreach (var building in buildings)
             {
@@ -46,11 +53,14 @@ namespace Managers
 
         void Update()
         {
-            if (Gold <= 0)
-            {
-                Debug.Log("Game Over");
-                Time.timeScale = 0;
-            }
+            if (Gold > 0) return;
+            Debug.Log("Game Over");
+
+            gameOverScreen.DOFade(1, 0.5f);
+            gameOverScreen.blocksRaycasts = true;
+            gameOverScreen.interactable = true;
+            
+            Time.timeScale = 0;
         }
         
         public void AsignVillager(Ally ally)
