@@ -8,9 +8,12 @@ namespace Managers
         int moneyCost = 100;
         [SerializeField]
         GameObject buildingPrefab;
+
+        [SerializeField] 
+        float y;
         
         public int MoneyCost => moneyCost;
 
-        public void CreateBuilding() => Instantiate(buildingPrefab, transform.position, Quaternion.identity);
+        public void CreateBuilding() => Instantiate(buildingPrefab, new(transform.position.x, y, 1), Quaternion.identity);
     }
 }

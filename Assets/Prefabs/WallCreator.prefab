@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7281212818680596293}
   - component: {fileID: 7426495382633426561}
   m_Layer: 0
-  m_Name: Creator
+  m_Name: WallCreator
   m_TagString: BuildingCreator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
