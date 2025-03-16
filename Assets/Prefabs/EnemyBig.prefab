@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7615119317190246802}
   - component: {fileID: 439445701716867120}
   - component: {fileID: 1146103665604107465}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 7083886816832807970, guid: 866cf0ff64a6fa447bbed3dafbc83a3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -224,5 +224,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 2
   attackDamage: 15
-  health: 20
+  health: 100
   speed: 1

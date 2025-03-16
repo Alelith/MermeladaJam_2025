@@ -45,7 +45,9 @@ namespace Player
         void FixedUpdate()
         {
             rb.linearVelocity = movement * speed;
-            spriteRenderer.flipX = movement.x < 0;
+            
+            if (movement.x != 0)
+                spriteRenderer.flipX = movement.x < 0;
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -114,10 +116,37 @@ namespace Player
                 
                 canvas.DOFade(1, 0.5f);
             }
+            
+            if (other.CompareTag("Summoner"))
+            {
+                var summoner = other.GetComponent<Summon>();
+                
+                text.text = $"{summoner.MoneyCost} Dabloons";
+                
+                button.onClick.RemoveAllListeners();
+                
+                button.onClick.AddListener(() =>
+                {
+                    if (summoner.MoneyCost > Town.Instance.Gold || Town.Instance.FilledAllies == Town.Instance.AvailableAllies)
+                    {
+                        Debug.Log("Not enough money");
+                        return;
+                    }
+                    
+                    Town.Instance.Gold -= summoner.MoneyCost;
+                    summoner.SummonMichi();
+                });
+                
+                canvas.interactable = true;
+                
+                canvas.DOFade(1, 0.5f);
+            }
         }
 
         void OnTriggerExit2D(Collider2D other)
         {
+            if (!other.CompareTag("Building") && !other.CompareTag("BuildingCreator") && !other.CompareTag("Summoner"))
+                return;
             button.onClick.RemoveAllListeners();
             canvas.DOFade(0, 0.5f);
             

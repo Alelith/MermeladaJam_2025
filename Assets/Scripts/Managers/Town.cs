@@ -16,9 +16,12 @@ namespace Managers
 
         int availableAllies;
         
+        int filledAllies;
+        
         public int Gold { get; set; } = 1000;
 
         public int AvailableAllies { get => availableAllies; set => availableAllies = value; }
+        public int FilledAllies { get => filledAllies; set => filledAllies = value; }
 
         public Transform TownCenter => townCenter;
     
@@ -36,8 +39,8 @@ namespace Managers
 
             foreach (var building in buildings)
             {
-                if (building is Tower)
-                    availableAllies += ((Tower)building).Cats;
+                if (building is Tower tower)
+                    availableAllies += 2 - tower.Allies;
             }
         }
         
@@ -45,12 +48,13 @@ namespace Managers
         {
             foreach (var building in buildings)
             {
-                if (building is Tower)
+                if (building is Tower tower)
                 {
-                    if (((Tower)building).Cats > 0)
+                    if (tower.Allies < 2)
                     {
-                        availableAllies--;
-                        ((Tower)building).Cats--;
+                        tower.AsignVillager(ally);
+
+                        filledAllies++;
                         
                         break;
                     }

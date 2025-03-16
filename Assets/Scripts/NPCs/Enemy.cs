@@ -14,6 +14,8 @@ namespace NPCs
         float speed;
 
         Building building;
+
+        public float Health { get => health; set => health = value; }
         
         protected override void Start()
         {
