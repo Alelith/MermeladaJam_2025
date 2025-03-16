@@ -56,11 +56,9 @@ namespace Managers
             if (Gold > 0) return;
             Debug.Log("Game Over");
 
-            gameOverScreen.DOFade(1, 0.5f);
+            gameOverScreen.DOFade(1, 0.5f).OnComplete(() => Time.timeScale = 0);
             gameOverScreen.blocksRaycasts = true;
             gameOverScreen.interactable = true;
-            
-            Time.timeScale = 0;
         }
         
         public void AsignVillager(Ally ally)
