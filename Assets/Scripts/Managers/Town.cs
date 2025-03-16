@@ -43,6 +43,15 @@ namespace Managers
                     availableAllies += 2 - tower.Allies;
             }
         }
+
+        void Update()
+        {
+            if (Gold <= 0)
+            {
+                Debug.Log("Game Over");
+                Time.timeScale = 0;
+            }
+        }
         
         public void AsignVillager(Ally ally)
         {

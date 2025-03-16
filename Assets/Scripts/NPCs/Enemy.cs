@@ -1,3 +1,4 @@
+using System;
 using Managers;
 using UnityEngine;
 
@@ -33,6 +34,19 @@ namespace NPCs
                 {
                     isAttacking = true;
                     this.building = building;
+                }
+            }
+        }
+
+        void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                attackTimer -= Time.deltaTime;
+                if (attackTimer <= 0)
+                {
+                    attackTimer = attackCooldown;
+                    Town.Instance.Gold -= Mathf.RoundToInt(attackDamage);
                 }
             }
         }
