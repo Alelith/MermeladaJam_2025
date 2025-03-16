@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7615119317190246802}
   - component: {fileID: 439445701716867120}
   - component: {fileID: 1146103665604107465}
+  - component: {fileID: 5148790954881887990}
   m_Layer: 7
   m_Name: EnemyBig
   m_TagString: Enemy
@@ -226,3 +227,25 @@ MonoBehaviour:
   attackDamage: 15
   health: 100
   speed: 1
+--- !u!95 &5148790954881887990
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596000072410591150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 552d7ffeb35fc2d4c920764cdc7c9afc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

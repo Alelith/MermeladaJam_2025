@@ -18,10 +18,14 @@ namespace NPCs
         protected bool isAttacking;
 
         protected float attackTimer;
+
+        protected Animator animator;
         
         protected virtual void Start() 
         {
             brain = new StateMachine();
+
+            animator = GetComponent<Animator>();
             
             brain.PushState(Idle, OnIdleEnter, OnIdleExit);
         }

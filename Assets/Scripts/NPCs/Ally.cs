@@ -34,7 +34,7 @@ namespace NPCs
 
         protected override void OnIdleExit() { }
 
-        protected override void OnMoveEnter() { }
+        protected override void OnMoveEnter() => animator.SetBool("IsWalking", true);
 
         protected override void Move()
         {
@@ -53,9 +53,9 @@ namespace NPCs
                 Town.Instance.AsignVillager(this);
         }
 
-        protected override void OnMoveExit() { }
+        protected override void OnMoveExit() => animator.SetBool("IsWalking", false);
 
-        protected override void OnAttackEnter() { }
+        protected override void OnAttackEnter() => animator.SetBool("IsAttacking", true);
 
         protected override void Attack()
         {
@@ -75,6 +75,6 @@ namespace NPCs
             }
         }
 
-        protected override void OnAttackExit() { }
+        protected override void OnAttackExit() => animator.SetBool("IsAttacking", false);
     }
 }
