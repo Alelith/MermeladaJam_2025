@@ -1,6 +1,7 @@
 using System;
 using Managers;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 namespace NPCs
@@ -23,6 +24,12 @@ namespace NPCs
             objetive = Town.Instance.TownCenter;
             
             base.Start();
+        }
+
+        void FixedUpdate()
+        {
+            if (!GameManager.Instance.IsDay) return;
+            Destroy(gameObject, Random.Range(1, 3));
         }
 
         void OnTriggerEnter2D(Collider2D other)

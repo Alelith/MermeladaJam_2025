@@ -71,6 +71,8 @@ namespace NPCs
                     Destroy(enemy.gameObject);
                     enemy = null;
                     brain.PopState();
+                    
+                    Town.Instance.Gold += 100;
                 }
             }
         }

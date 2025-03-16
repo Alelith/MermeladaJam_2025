@@ -12,16 +12,24 @@ namespace Managers
         protected int repairPrice = 100;
         
         [SerializeField]
+        protected int upgradePrice = 300;
+        
+        [SerializeField]
         protected Sprite fixedBuilding;
         [SerializeField]
         protected Sprite brokenBuilding;
+        [SerializeField]
+        protected Sprite rockBuilding;
         
         protected bool isBroken = false;
+
+        protected bool isRock = false;
         
         protected SpriteRenderer spriteRenderer;
         protected Collider2D collider2D;
         
         public bool IsBroken => isBroken;
+        public bool IsRock => isRock;
 
         protected virtual void Awake()
         {
@@ -43,7 +51,7 @@ namespace Managers
             health = 100;
             collider2D.isTrigger = false;
     
-            spriteRenderer.sprite = fixedBuilding;
+            spriteRenderer.sprite = isRock ? rockBuilding : fixedBuilding;
         }
 
         public float Health { get => health; set => health = value; }

@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 2
   attackDamage: 5
-  health: 10
+  health: 50
   speed: 1
 --- !u!95 &1811354788645823840
 Animator:

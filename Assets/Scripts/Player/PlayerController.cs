@@ -145,11 +145,29 @@ namespace Player
                 
                 canvas.DOFade(1, 0.5f);
             }
+
+            if (other.CompareTag("Chest"))
+            {
+                var chest = other.GetComponent<Chest>();
+                
+                if (!chest.IsOpen)
+                {
+                    text.text = chest.Message;
+                        
+                    button.onClick.RemoveAllListeners();
+                    
+                    button.onClick.AddListener(() => chest.Open());
+                    
+                    canvas.interactable = true;
+                    
+                    canvas.DOFade(1, 0.5f);
+                }
+            }
         }
 
         void OnTriggerExit2D(Collider2D other)
         {
-            if (!other.CompareTag("Building") && !other.CompareTag("BuildingCreator") && !other.CompareTag("Summoner"))
+            if (!other.CompareTag("Building") && !other.CompareTag("BuildingCreator") && !other.CompareTag("Summoner") && !other.CompareTag("Chest"))
                 return;
             button.onClick.RemoveAllListeners();
             canvas.DOFade(0, 0.5f);
