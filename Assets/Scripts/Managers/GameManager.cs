@@ -38,7 +38,7 @@ namespace Managers
             Debug.Log(DayCount);
         }
 
-        void Pause()
+        public void Pause()
         {
             if (Town.Instance.Gold <= 0) return;
             
@@ -49,7 +49,7 @@ namespace Managers
             Time.timeScale = 0;
         }
         
-        void Resume()
+        public void Resume()
         {
             pauseMenu.DOFade(0, 0.5f);
             pauseMenu.blocksRaycasts = false;

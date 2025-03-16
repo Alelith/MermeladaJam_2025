@@ -38,6 +38,7 @@ namespace Player
         
             actions.Player.Move.started += ctx => Move(ctx.ReadValue<Vector2>());
             actions.Player.Move.canceled += ctx => Move(ctx.ReadValue<Vector2>());
+            actions.Player.Pause.performed += ctx => GameManager.Instance.Pause();
             
             actions.Enable();
         }

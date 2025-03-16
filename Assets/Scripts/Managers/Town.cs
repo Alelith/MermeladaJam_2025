@@ -23,7 +23,7 @@ namespace Managers
         
         int filledAllies;
         
-        public int Gold { get; set; } = 1000;
+        public int Gold { get; set; } = 4000;
 
         public int AvailableAllies { get => availableAllies; set => availableAllies = value; }
         public int FilledAllies { get => filledAllies; set => filledAllies = value; }
@@ -53,7 +53,7 @@ namespace Managers
 
         void Update()
         {
-            if (Gold > 0) return;
+            if (Gold >= 0) return;
             Debug.Log("Game Over");
 
             gameOverScreen.DOFade(1, 0.5f).OnComplete(() => Time.timeScale = 0);
