@@ -14,6 +14,9 @@ namespace NPCs
         [SerializeField]
         [Range(0, 1)]
         float speed;
+        
+        [SerializeField]
+        AudioClip attackClip;
 
         Building building;
 
@@ -85,6 +88,8 @@ namespace NPCs
             {
                 attackTimer = attackCooldown;
                 building.Health -= attackDamage;
+                
+                GameManager.Instance.Sfx.PlayOneShot(attackClip);
 
                 if (building.Health <= 0)
                 {

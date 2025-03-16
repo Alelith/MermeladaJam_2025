@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0.5
-  attackDamage: 5
+  attackDamage: 1
 --- !u!58 &7828061239186545947
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using NPCs;
+using TMPro;
 using UnityEngine;
 
 namespace Managers
@@ -18,12 +19,15 @@ namespace Managers
         
         [SerializeField]
         CanvasGroup gameOverScreen;
+        
+        [SerializeField]
+        TextMeshProUGUI goldText;
 
         int availableAllies;
         
         int filledAllies;
         
-        public int Gold { get; set; } = 4000;
+        public int Gold { get; set; } = 10;
 
         public int AvailableAllies { get => availableAllies; set => availableAllies = value; }
         public int FilledAllies { get => filledAllies; set => filledAllies = value; }
@@ -53,6 +57,8 @@ namespace Managers
 
         void Update()
         {
+            goldText.text = Gold.ToString();
+            
             if (Gold >= 0) return;
             Debug.Log("Game Over");
 

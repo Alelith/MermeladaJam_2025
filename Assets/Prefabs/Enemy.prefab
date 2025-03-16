@@ -224,9 +224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
-  attackDamage: 5
-  health: 50
+  attackDamage: 2
+  health: 4
   speed: 1
+  attackClip: {fileID: 8300000, guid: abdf140aa72f04b489fb29a58144e1b6, type: 3}
 --- !u!95 &1811354788645823840
 Animator:
   serializedVersion: 7

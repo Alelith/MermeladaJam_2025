@@ -23,6 +23,7 @@ namespace Player
         InputActions actions;
         Rigidbody2D rb;
         SpriteRenderer spriteRenderer;
+        Animator anim;
         
         Vector2 movement;
 
@@ -33,6 +34,7 @@ namespace Player
         {
             rb = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            anim = GetComponent<Animator>();
             
             actions = new InputActions();
         
@@ -46,6 +48,8 @@ namespace Player
         void FixedUpdate()
         {
             rb.linearVelocity = movement * speed;
+            
+            anim.SetBool("IsWalking", rb.linearVelocity != Vector2.zero);
             
             if (movement.x != 0)
                 spriteRenderer.flipX = movement.x < 0;

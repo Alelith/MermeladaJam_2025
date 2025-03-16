@@ -8,6 +8,7 @@ TagManager:
   - BuildingCreator
   - Summoner
   - Enemy
+  - Chest
   layers:
   - Default
   - TransparentFX

@@ -72,7 +72,9 @@ namespace NPCs
                     enemy = null;
                     brain.PopState();
                     
-                    Town.Instance.Gold += 100;
+                    GameManager.Instance.PlayEnemyDead();
+                    
+                    //Town.Instance.Gold += 100;
                 }
             }
         }

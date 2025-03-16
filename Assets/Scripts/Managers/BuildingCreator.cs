@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Managers
@@ -8,6 +9,9 @@ namespace Managers
         int moneyCost = 100;
         [SerializeField]
         GameObject buildingPrefab;
+        
+        [SerializeField]
+        AudioClip clip;
 
         [SerializeField] 
         float y;
@@ -19,6 +23,8 @@ namespace Managers
         public void CreateBuilding()
         {
             GameObject instance = Instantiate(buildingPrefab, new(transform.position.x, y, 1), Quaternion.identity);
+            
+            GameManager.Instance.Sfx.PlayOneShot(clip);
             
             Town.Instance.Buildings.Add(instance.GetComponent<Building>());
         }

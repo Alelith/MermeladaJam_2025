@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7fabfb7fc3bbe468919a88c085aa80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyCost: 100
+  moneyCost: 3
   buildingPrefab: {fileID: 4439674334367571050, guid: b42cba86a16f58b4f8c22759e3df51e7, type: 3}
+  clip: {fileID: 8300000, guid: 73779c9579aeb394985d83427d6d6965, type: 3}
   y: 0.3

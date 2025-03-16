@@ -7,8 +7,16 @@ namespace Managers
         [SerializeField]
         GameObject summonPrefab;
         
-        public void SummonMichi() => Instantiate(summonPrefab, transform.position, Quaternion.identity);
+        [SerializeField]
+        AudioClip clip;
         
-        public int MoneyCost { get; } = 100;
+        public void SummonMichi() 
+        {
+            GameManager.Instance.Sfx.PlayOneShot(clip);
+            
+            Instantiate(summonPrefab, transform.position, Quaternion.identity);
+        }
+        
+        public int MoneyCost { get; } = 2;
     }
 }

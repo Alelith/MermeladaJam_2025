@@ -21,6 +21,12 @@ namespace Managers
         [SerializeField]
         protected Sprite rockBuilding;
         
+        [SerializeField]
+        AudioClip breakClip;
+        
+        [SerializeField]
+        AudioClip repairClip;
+        
         protected bool isBroken = false;
 
         protected bool isRock = false;
@@ -43,6 +49,8 @@ namespace Managers
             isBroken = true;
             collider2D.isTrigger = true;
             spriteRenderer.sprite = brokenBuilding;
+            
+            GameManager.Instance.Sfx.PlayOneShot(breakClip);
         }
         
         public virtual void Repair()
@@ -52,6 +60,8 @@ namespace Managers
             collider2D.isTrigger = false;
     
             spriteRenderer.sprite = isRock ? rockBuilding : fixedBuilding;
+            
+            GameManager.Instance.Sfx.PlayOneShot(repairClip);
         }
 
         public float Health { get => health; set => health = value; }

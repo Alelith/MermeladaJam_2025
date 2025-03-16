@@ -136,10 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fd80e71db538548ba1d9c992dd1380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  repairPrice: 100
+  health: 30
+  repairPrice: 2
+  upgradePrice: 3
   fixedBuilding: {fileID: 21300000, guid: 3ebc9e0c43b16664b82c1f1d2e0aa752, type: 3}
   brokenBuilding: {fileID: 21300000, guid: f4effe93d47acbc4f8a3e9eb6ba12809, type: 3}
+  rockBuilding: {fileID: 0}
+  breakClip: {fileID: 8300000, guid: 434af52f321e1a348a9fde0b08672101, type: 3}
+  repairClip: {fileID: 8300000, guid: 73779c9579aeb394985d83427d6d6965, type: 3}
   spawnPoints:
   - {fileID: 2015143504989970097}
   - {fileID: 8346775004708880953}
