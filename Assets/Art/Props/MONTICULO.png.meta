@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b453b1817ff81e41a3cb39670013f79
+guid: 8d8848db4559b7c41a54abd55eb3ae17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7519753400087680208
-    second: Queen_0
+      213: -2272708720349693390
+    second: MONTICULO_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Queen_0
+      name: MONTICULO_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 2
-        width: 112
-        height: 115
+        x: 16
+        y: 41
+        width: 68
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d413c240e78b5860800000000000000
-      internalID: 7519753400087680208
+      spriteID: 23abf9dc577b570e0800000000000000
+      internalID: -2272708720349693390
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Queen_0: 7519753400087680208
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

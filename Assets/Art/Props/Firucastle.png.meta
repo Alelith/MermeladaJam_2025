@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 4eacaf47640865442a10f0755b37c317
+guid: 482981fda4d55524bb96b286b0fe39cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7577351638126238081
-    second: Queenwalk_0
-  - first:
-      213: 5993703125570065245
-    second: Queenwalk_1
+      213: 5714357534907448052
+    second: Firucastle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Queenwalk_0
+      name: Firucastle_0
       rect:
         serializedVersion: 2
-        x: 118
-        y: 72
-        width: 122
-        height: 114
+        x: 86
+        y: 24
+        width: 295
+        height: 207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f76e247e4d6d7d690800000000000000
-      internalID: -7577351638126238081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Queenwalk_1
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 72
-        width: 122
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5390c89c39ed2350800000000000000
-      internalID: 5993703125570065245
+      spriteID: 4fa3cbbe6e97d4f40800000000000000
+      internalID: 5714357534907448052
       vertices: []
       indices: 
       edges: []
@@ -172,9 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Queenwalk_0: -7577351638126238081
-      Queenwalk_1: 5993703125570065245
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

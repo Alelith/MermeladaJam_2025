@@ -11,11 +11,14 @@ namespace Managers
         GameObject[] enemyPrefab;
 
         [SerializeField] 
+        GameObject spawnerDependence;
+
+        [SerializeField] 
         float[] spawnProbabilities;
     
         void Update()
         {
-            if (GameManager.Instance.IsDay) return;
+            if (GameManager.Instance.IsDay || !spawnerDependence) return;
         
             if (Time.time % spawnRate < Time.deltaTime) 
                 SpawnEnemy();
