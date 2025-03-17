@@ -18,7 +18,7 @@ namespace Managers
     
         void Update()
         {
-            if (GameManager.Instance.IsDay || !spawnerDependence) return;
+            if (GameManager.Instance.IsDay || spawnerDependence) return;
         
             if (Time.time % spawnRate < Time.deltaTime) 
                 SpawnEnemy();

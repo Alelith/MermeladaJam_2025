@@ -14,9 +14,6 @@ namespace NPCs
         [SerializeField]
         [Range(0, 1)]
         float speed;
-        
-        [SerializeField]
-        AudioClip attackClip;
 
         Building building;
 
@@ -29,7 +26,7 @@ namespace NPCs
             base.Start();
         }
 
-        void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if (!GameManager.Instance.IsDay) return;
             Destroy(gameObject, Random.Range(1, 3));
@@ -88,8 +85,6 @@ namespace NPCs
             {
                 attackTimer = attackCooldown;
                 building.Health -= attackDamage;
-                
-                GameManager.Instance.Sfx.PlayOneShot(attackClip);
 
                 if (building.Health <= 0)
                 {

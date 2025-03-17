@@ -59,6 +59,13 @@ namespace NPCs
 
         protected override void Attack()
         {
+            if (enemy == null)
+            {
+                isAttacking = false;
+                brain.PopState();
+                return;
+            }
+            
             attackTimer -= Time.deltaTime;
             if (attackTimer <= 0)
             {
@@ -71,10 +78,6 @@ namespace NPCs
                     Destroy(enemy.gameObject);
                     enemy = null;
                     brain.PopState();
-                    
-                    GameManager.Instance.PlayEnemyDead();
-                    
-                    //Town.Instance.Gold += 100;
                 }
             }
         }

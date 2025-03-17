@@ -160,7 +160,14 @@ namespace Player
                         
                     button.onClick.RemoveAllListeners();
                     
-                    button.onClick.AddListener(() => chest.Open());
+                    button.onClick.AddListener(() =>
+                    {
+                        chest.Open();
+                    
+                        canvas.DOFade(0, 0.5f);
+                    
+                        canvas.interactable = false;
+                    });
                     
                     canvas.interactable = true;
                     
