@@ -1,6 +1,9 @@
 using NPCs;
 using UnityEngine;
 
+/// <summary>
+/// Represents a portal in the game.
+/// </summary>
 public class Portal : Enemy
 {
     protected override void FixedUpdate() { }

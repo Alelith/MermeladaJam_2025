@@ -4,12 +4,24 @@ using UnityEngine;
 
 namespace NPCs
 {
+    /// <summary>
+    /// Represents a villager in the town.
+    /// </summary>
     public class Ally : Entity
     {
+        /// <summary>
+        /// Indicates whether the ally is currently on a tower.
+        /// </summary>
         bool isOnTower;
 
+        /// <summary>
+        /// The enemy the ally is currently attacking.
+        /// </summary>
         Enemy enemy;
-        
+
+        /// <summary>
+        /// The tower the ally is currently assigned to.
+        /// </summary>
         public Transform Tower { get; set; }
 
         void OnTriggerStay2D(Collider2D other)
@@ -17,7 +29,7 @@ namespace NPCs
             if (other.CompareTag("Enemy"))
             {
                 isAttacking = true;
-                
+
                 enemy = other.GetComponent<Enemy>();
             }
         }
@@ -65,7 +77,7 @@ namespace NPCs
                 brain.PopState();
                 return;
             }
-            
+
             attackTimer -= Time.deltaTime;
             if (attackTimer <= 0)
             {
